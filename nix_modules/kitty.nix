@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }: 
 
 {
-
     # kitty terminal config
     programs.kitty = lib.mkForce {
         enable = true;
@@ -13,6 +12,10 @@
             window_padding_width = 4;
             background_opacity = "0.5";
             background_blur = 5;
+            font_family = "fira-code";
+            bold_font = "auto";
+            italic_font = "auto";
+            bold_italic_font = "auto";
             font_size = "12";
             symbol_map = let
                 mappings = [
