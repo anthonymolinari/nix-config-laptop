@@ -24,7 +24,7 @@
         };
 
         font = {
-            name = "fira-code";
+            name = "FiraCode Nerd Font";
             size = 9;
         };
     };
