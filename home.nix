@@ -6,36 +6,19 @@
 
     home.stateVersion = "25.05";
 
-    home.packages = with pkgs; [
-        tmux
-        ranger
-        neovim
-        git
-        kdePackages.dolphin 
-        hyprpaper
-        waybar
-        zsh
-        nerd-fonts.fira-code 
-        rofi-wayland
-        rofi-power-menu
-        wl-clipboard
-        firefox
-        lazygit
-    ];
-
-    home.file = {
-    };
-
     home.sessionVariables = {
         EDITOR = "nvim";
     };
 
     imports = [
+        ./packages.nix
         ./nix_modules/hyprland.nix
         ./nix_modules/kitty.nix
         ./nix_modules/theme.nix
         ./nix_modules/waybar.nix
+        ./nix_modules/hyprlock.nix
         ./nix_modules/git.nix
+        ./nix_modules/zsh.nix
     ];
 
     # Let Home Manager install and manage itself.
