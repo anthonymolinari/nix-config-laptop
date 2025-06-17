@@ -4,11 +4,11 @@
     nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
+        btop
         brightnessctl
         firefox
         gh
         git
-        htop
         hyprpaper
         hyprlock
         kdePackages.dolphin 
