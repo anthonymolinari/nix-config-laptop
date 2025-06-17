@@ -11,16 +11,10 @@
     };
 
     imports = [
-        ./packages.nix
-        ./nix_modules/hyprland.nix
-        ./nix_modules/kitty.nix
-        ./nix_modules/theme.nix
-        ./nix_modules/waybar.nix
-        ./nix_modules/hyprlock.nix
-        ./nix_modules/git.nix
-        ./nix_modules/zsh.nix
-        ./nix_modules/tmux.nix
+        ./nix-modules
     ];
+
+    nixpkgs.config.allowUnfree = true;
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;

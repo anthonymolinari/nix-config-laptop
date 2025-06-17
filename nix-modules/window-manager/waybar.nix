@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }: {
 
-{
-    # waybar 
+    home.packages = with pkgs; [ waybar ];
+
     programs.waybar = {
         enable = true;
         settings = [{
