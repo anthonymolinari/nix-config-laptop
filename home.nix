@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: 
+{ config, pkgs,... }: 
 
 {
     home.username = "anthony";
@@ -19,6 +19,7 @@
         ./nix_modules/hyprlock.nix
         ./nix_modules/git.nix
         ./nix_modules/zsh.nix
+        ./nix_modules/tmux.nix
     ];
 
     # Let Home Manager install and manage itself.

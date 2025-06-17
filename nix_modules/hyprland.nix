@@ -8,7 +8,7 @@
     wayland.windowManager.hyprland.settings = {
         monitor = "eDP-1, 1920x1080@60, 0x0, 1.0";
         "$mod" = "SUPER";
-        exec-once="waybar";
+        exec-once="waybar"; # start status bar
         bindel = [
             ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
             ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
@@ -19,9 +19,10 @@
         ];
         bind = [
             "$mod, RETURN, exec, kitty"
-            "$mod, C, killactive,"
+            "SUPER SHIFT, Q, killactive,"
             "SUPER SHIFT, E, exit,"
-            "$mod, F, togglefloating,"
+            "SUPER SHIFT, S, exec, hyprlock"
+            "$mod, F, fullscreen,"
             "$mod, E, exec, dolphin"
             "$mod, G, exec, firefox"
             "$mod, D, exec, rofi -show drun"

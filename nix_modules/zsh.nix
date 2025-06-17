@@ -27,6 +27,7 @@
         shellAliases = {
             update = "home-manager switch";
             edit = "nvim ~/.config/home-manager";
+            ssh = "kitty +kitten ssh";
         };
 
         history = {

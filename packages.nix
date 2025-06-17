@@ -8,12 +8,14 @@
         firefox
         gh
         git
+        htop
         hyprpaper
         hyprlock
         kdePackages.dolphin 
         lazygit
         neovim
         nerd-fonts.fira-code 
+        overskride
         ranger
         spotify
         tmux

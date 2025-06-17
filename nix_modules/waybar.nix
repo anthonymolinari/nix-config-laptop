@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
     # waybar 
     programs.waybar = {
         enable = true;
@@ -15,27 +14,55 @@
             height = 0;
             modules-left = [
                 "hyprland/workspaces"
+                "hyprland/window"
             ];
-            modules-center = ["hyprland/window"];
+            modules-center = [
+                "clock"
+            ];
             modules-right = [
                 "tray"
-                "network"
-                "custom/divider"
                 "backlight"
                 "custom/divider"
-                "battery"
+                "pulseaudio"
                 "custom/divider"
-                "clock"
+                "network"
+                "custom/divider"
+                "battery"
             ];
             "hyprland/window" = { format = "{}"; };
             "wlr/workspaces" = {
                 on-scroll-up = "hyprctl dispatch workspace e+1";
                 on-scroll-down = "hyprctl dispatch workspace e-1";
             };
-            battery = { format = "B: {}%"; };
+            battery = { format = "󰁹 : {}%"; };
             backlight = {
-                format = "BL: {}";
+                format = "󰃞  : {}";
                 device = "acpi_video0";
+            };
+            pulseaudio = {
+                format = "{icon} {volume}%";
+                tooltip = false;
+                format-muted = " ";
+                on-click = "pamixer -t";
+                on-scroll-up = "pamixer -i 5";
+                on-scroll-down = "pamixer -d 5";
+                scroll-step = 5;
+                format-icons = {
+                    headphone = " ";
+                    hands-free = " ";
+                    headset = " ";
+                    default = [ "" " " "" ];
+                };
+            };
+            "pulseaudio#microphone" = {
+                format = "{format_source}";
+                tooltip = false;
+                format-source = "";
+                format-source-muted ="";
+                on-click = "pamixer --defualt-source -t";
+                on-scroll-up = "pamixer --default-source -i 5";
+                on-scroll-down = "pamixer --default-source -d 5";
+                scroll-step = 5;
             };
             tray = {
                 icon-size = 13;
@@ -43,7 +70,7 @@
                 spacing = 10;
             };
             network = {
-                format = " {essid}";
+                format = "  : {essid}";
                 fomat-disconnected = " no wifi";
             };
             clock = {
@@ -64,7 +91,4 @@
             };
         }];        
     };
-
-
-    
 }
